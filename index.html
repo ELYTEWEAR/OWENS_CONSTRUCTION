@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roofing Estimate Sheet</title>
+</head>
+<body>
+    <h1>Owens Construction Estimate Sheet</h1>
+    <form id="estimateForm">
+        <!-- Section for Outside Work -->
+        <h2>Outside Work</h2>
+        <label for="pitchRoof">Pitch of Roof:</label>
+        <input type="text" id="pitchRoof" name="pitchRoof"><br>
+
+        <label for="shingles">3 Dimensional Shingles:</label>
+        <input type="text" id="shingles" name="shingles"><br>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color"><br>
+
+        <!-- ... Other fields ... -->
+        
+        <label for="totalCost">Total for Cost and Labor:</label>
+        <input type="text" id="totalCost" name="totalCost"><br>
+        
+        <label for="misc">Misc:</label>
+        <textarea id="misc" name="misc"></textarea><br>
+
+        <!-- Acceptance of Proposal -->
+        <h2>Acceptance of Proposal</h2>
+        <p>I, <input type="text" name="customerName">, agree to the work with the money given from the insurance company, at no cost above or below the written amount including the depreciation. Any unforeseen expenses we will take up with the insurance company and adjuster as a supplement.</p>
+
+        <label for="customerSignature">Signature:</label>
+        <input type="text" id="customerSignature" name="customerSignature"><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br>
+
+        <button type="button" onclick="generatePDF()">Save as PDF</button>
+    </form>
+
+    <script>
+        // JavaScript to process the form data and generate a PDF will go here
+    </script>
+</body>
+</html>
