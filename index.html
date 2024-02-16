@@ -3,44 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Roofing Estimate Sheet</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .label { display: inline-block; width: 180px; }
+        .input-field { width: 300px; }
+    </style>
 </head>
 <body>
-    <h1>Owens Construction Estimate Sheet</h1>
+    <h1>OWEN'S Roofing Estimate Sheet</h1>
+    <h2>Insurance Specialists</h2>
     <form id="estimateForm">
-        <!-- Section for Outside Work -->
-        <h2>Outside Work</h2>
-        <label for="pitchRoof">Pitch of Roof:</label>
-        <input type="text" id="pitchRoof" name="pitchRoof"><br>
-
-        <label for="shingles">3 Dimensional Shingles:</label>
-        <input type="text" id="shingles" name="shingles"><br>
-
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color"><br>
-
-        <!-- ... Other fields ... -->
-        
-        <label for="totalCost">Total for Cost and Labor:</label>
-        <input type="text" id="totalCost" name="totalCost"><br>
-        
-        <label for="misc">Misc:</label>
-        <textarea id="misc" name="misc"></textarea><br>
-
+        <fieldset>
+            <legend>Outside Work</legend>
+            <div class="form-row">
+                <label class="label" for="pitchRoof">Pitch of Roof:</label>
+                <input class="input-field" type="text" id="pitchRoof" name="pitchRoof"><br>
+            </div>
+            <div class="form-row">
+                <label class="label" for="shingles">3 Dimensional Shingles:</label>
+                <input class="input-field" type="text" id="shingles" name="shingles"><br>
+            </div>
+            <!-- Add additional form fields as needed -->
+        </fieldset>
+        <!-- ... -->
+        <div class="form-row">
+            <label class="label" for="totalCost">Total for Cost and Labor:</label>
+            <input class="input-field" type="text" id="totalCost" name="totalCost"><br>
+        </div>
+        <div class="form-row">
+            <label class="label" for="misc">Misc:</label>
+            <textarea class="input-field" id="misc" name="misc"></textarea><br>
+        </div>
         <!-- Acceptance of Proposal -->
         <h2>Acceptance of Proposal</h2>
-        <p>I, <input type="text" name="customerName">, agree to the work with the money given from the insurance company, at no cost above or below the written amount including the depreciation. Any unforeseen expenses we will take up with the insurance company and adjuster as a supplement.</p>
-
-        <label for="customerSignature">Signature:</label>
-        <input type="text" id="customerSignature" name="customerSignature"><br>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date"><br>
-
-        <button type="button" onclick="generatePDF()">Save as PDF</button>
+        <p>Owens Construction and <input class="input-field" type="text" id="clientName" name="clientName"> agree to do the work with the money given from the insurance company, at no cost above or below the written amount including the depreciation. Any unforeseen expenses we will take up with the insurance company and adjuster as a supplement.</p>
+        <div class="form-row">
+            <label class="label" for="clientSignature">Signature:</label>
+            <input class="input-field" type="text" id="clientSignature" name="clientSignature"><br>
+        </div>
+        <div class="form-row">
+            <label class="label" for="date">Date:</label>
+            <input class="input-field" type="date" id="date" name="date"><br>
+        </div>
+        <div class="form-row">
+            <label class="label" for="owensSignature">Owens Signature:</label>
+            <input class="input-field" type="text" id="owensSignature" name="owensSignature"><br>
+        </div>
+        <div class="form-row">
+            <label class="label" for="owensDate">Date:</label>
+            <input class="input-field" type="date" id="owensDate" name="owensDate"><br>
+        </div>
+        <button type="button">Save as PDF</button>
     </form>
-
     <script>
-        // JavaScript to process the form data and generate a PDF will go here
+        // Placeholder for JavaScript to process the form data and generate a PDF
     </script>
 </body>
 </html>
