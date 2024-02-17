@@ -12,17 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add form data to PDF
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(12);
+        doc.setFontSize(16);
         doc.text('Estimate Sheet Roofing - Owen\'s Construction', 10, yPosition);
-        yPosition += 10; // Increment position for the next line
+        yPosition += 20; // Increment position for the next line
 
         // Convert form fields to text and add to PDF
         doc.setFont('helvetica', 'normal');
         const formElements = estimateForm.elements;
         for (let i = 0; i < formElements.length; i++) {
             const element = formElements[i];
-            if (element.type !== "submit") { // Skip the submit button
-                let text = `${element.previousElementSibling.innerText} ${element.value}`;
+            if (element.type !== "submit" && element.name !== "") { // Skip the submit button and elements without a name
+                let text;
+                if (element.type === 'checkbox') {
+                    text = `${element.checked ? 'Yes' : 'No'} - ${element.previousElementSibling.innerText}`;
+                } else {
+                    text = `${element.previousElementSibling.innerText} ${element.value}`;
+                }
                 doc.text(text, 10, yPosition);
                 yPosition += 10; // Increment for next item
                 if (yPosition > 280) { // Add a new page if the current page is full
