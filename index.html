@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<script src="script.js" defer></script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estimate Sheet Roofing - Owen's Construction</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="content">
         <header>
             <img src="https://drive.google.com/uc?id=12Htmev2gtqnvct2c8AuuYRobrslHPo7S" alt="Owen's Construction Logo">
             <h1>Estimate Sheet Roofing</h1>
@@ -74,13 +73,6 @@
                     <input type="number" id="squares" name="squares">
                     <input type="checkbox" id="costPerSquare" name="costPerSquare">
                     <label for="costPerSquare">$500 per square</label>
-                </div>
-
-                <div class="form-row">
-                    <label for="squares">Number of Squares: </label>
-                    <input type="number" id="squares" name="squares">
-                    <input type="checkbox" id="costPerSquare" name="costPerSquare">
-                    <label for="costPerSquare">$350 per square</label>
                 </div>
 
                 <div class="form-row">
@@ -300,9 +292,35 @@
         </form>
     </div>
 
-    <button class="submit-btn" onclick="createPDF()">Create PDF Estimate</button>
+    <button class="submit-btn" onclick="captureForm()">Create PDF Estimate</button>
 
-<script src="script.js" defer></script>
-
+    <script>
+        function captureForm() {
+            html2canvas(document.querySelector("#content"), {
+                scale: 1, // Adjust scale as needed
+                scrollY: -window.scrollY,
+                scrollX: 0,
+                windowWidth: document.documentElement.offsetWidth,
+                windowHeight: document.documentElement.offsetHeight
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'pt',
+                    format: 'a4'
+                });
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                const imgWidth = canvas.width;
+                const imgHeight = canvas.height;
+                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+                const imgScaledWidth = imgWidth * ratio;
+                const imgScaledHeight = imgHeight * ratio;
+                const x = (pdfWidth - imgScaledWidth) / 2;
+                pdf.addImage(imgData, 'PNG', x, 0, imgScaledWidth, imgScaledHeight);
+                pdf.save("estimate.pdf");
+            });
+        }
+    </script>
 </body>
 </html>
