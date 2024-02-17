@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta viewport="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estimate Sheet Roofing - Owen's Construction</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Logo -->
-            <img src="https://drive.google.com/uc?export=view&id=12Htmev2gtqnvct2c8AuuYRobrslHPo7S" alt="Owen's Construction Logo">
+            <img src="https://drive.google.com/uc?id=12Htmev2gtqnvct2c8AuuYRobrslHPo7S" alt="Owen's Construction Logo">
             <h1>Estimate Sheet Roofing</h1>
             <h2>Owen's Construction</h2>
             <p>Insurance Specialists<br>
@@ -46,7 +45,10 @@
                 <div class="form-row">
                     <label for="shinglesType">We will use </label>
                     <select id="shinglesType" name="shinglesType">
-                        <option value="pinnacleAtlas">Pinnacle Atlas Shingles</option>
+                        <option value="architectural">Architectural</option>
+                        <option value="threeTab">Three-tab</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="pinicleAtlas">Pinicle Atlas</option>
                     </select> shingles.
                 </div>
 
@@ -64,15 +66,13 @@
                 <div class="form-row">
                     <label for="squares">Number of Squares: </label>
                     <input type="number" id="squares" name="squares">
-                    <label for="sqRate350">($350/sq)</label>
-                    <input type="checkbox" id="sqRate350" name="sqRate350">
-                    <label for="sqRate500">($500/sq)</label>
-                    <input type="checkbox" id="sqRate500" name="sqRate500">
+                    <input type="checkbox" id="squaresPrice" name="squaresPrice" value="500">
+                    <label for="squaresPrice">$500/sq</label>
                 </div>
 
                 <div class="form-row">
-                    <input type="checkbox" id="tearOff" name="tearOff" checked>
                     <label for="tearOff">I will tear off damaged roof and re-shingle.</label>
+                    <input type="checkbox" id="tearOff" name="tearOff" checked>
                 </div>
 
                 <div class="form-row">
@@ -89,14 +89,8 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="iceWaterGuard">Ice and Water Guard (Rolls): </label>
-                    <select id="iceWaterGuard" name="iceWaterGuard">
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
+                    <label for="iceWaterGuard">Add new ice and water guard on front starters from drip edge up.</label>
+                    <input type="checkbox" id="iceWaterGuard" name="iceWaterGuard" checked>
                 </div>
 
                 <div class="form-row">
@@ -111,13 +105,14 @@
                 </div>
 
                 <div class="form-row">
-                    <input type="checkbox" id="weatherIn" name="weatherIn" checked>
                     <label for="weatherIn">Weather in the roof before shingles are applied.</label>
+                    <input type="checkbox" id="weatherIn" name="weatherIn" checked>
                 </div>
 
                 <div class="form-row">
                     <label for="plywoodSheets">Replace up to </label>
                     <select id="plywoodSheets" name="plywoodSheets">
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -140,7 +135,7 @@
                         <option value="20">20</option>
                         <option value="other">Other</option>
                     </select> sheets of plywood related to your damage.
-                    <input type="number" id="otherPlywoodSheets" name="otherPlywoodSheets" style="display: none;">
+                    <input type="number" id="plywoodSheetsOther" name="plywoodSheetsOther" placeholder="Enter Number">
                 </div>
 
                 <div class="form-row">
@@ -158,6 +153,7 @@
                 <div class="form-row">
                     <label for="bootsQuantity">Install new 6" inch boots for heating and stink pipes: </label>
                     <select id="bootsQuantity" name="bootsQuantity">
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -170,6 +166,7 @@
                 <div class="form-row">
                     <label for="bootPipesQuantity">Add 3" boot pipes on existing pipes: </label>
                     <select id="bootPipesQuantity" name="bootPipesQuantity">
+                        <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -186,32 +183,47 @@
 
                 <div class="form-row">
                     <label for="boxVentsRemove">Remove all box vents: </label>
-                    <input type="number" id="boxVentsRemove" name="boxVentsRemove">
+                    <select id="boxVentsRemove" name="boxVentsRemove">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
                     <label for="valleysRolls">Add ice and water heavy duty to all valleys (Rolls): </label>
-                    <input type="number" id="valleysRolls" name="valleysRolls">
+                    <select id="valleysRolls" name="valleysRolls">
+                        <option value="0">0</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
-                    <label>Nails 1 1/4" (Boxes): </label>
-                    <input type="number" name="nails1_25Boxes" value="0">
+                    <label for="nails1_25Boxes">Nails 1 1/4" (Boxes): </label>
+                    <input type="number" id="nails1_25Boxes" name="nails1_25Boxes">
                 </div>
 
                 <div class="form-row">
-                    <label>Nails 1 3/4" (Boxes): </label>
-                    <input type="number" name="nails1_75Boxes" value="0">
+                    <label for="nails1_75Boxes">Nails 1 3/4" (Boxes): </label>
+                    <input type="number" id="nails1_75Boxes" name="nails1_75Boxes">
                 </div>
 
                 <div class="form-row">
-                    <label>Staples T-50's (Boxes): </label>
-                    <input type="number" name="staplesBoxes" value="0">
+                    <label for="staplesBoxes">Staples T-50's (Boxes): </label>
+                    <input type="number" id="staplesBoxes" name="staplesBoxes">
                 </div>
 
                 <div class="form-row">
-                    <label>Plywood 7/16 OSB Sheets: </label>
-                    <input type="number" name="plywoodSheetsOSB" value="0">
+                    <label for="plywoodSheetsOSB">Plywood 7/16 OSB Sheets: </label>
+                    <input type="number" id="plywoodSheetsOSB" name="plywoodSheetsOSB">
                 </div>
 
                 <div class="form-row">
@@ -223,7 +235,7 @@
                 <h3>Total for Cost and Labor</h3>
                 <div class="form-row">
                     <label for="totalCost">Total for Cost and Labor: $</label>
-                    <input type="number" id="totalCost" name="totalCost">
+                    <input type="number" id="totalCost" name="totalCost" readonly>
                 </div>
 
                 <div class="form-row">
@@ -256,17 +268,9 @@
                 </div>
             </section>
 
-            <section class="address">
-                <h3>Estimate Address</h3>
-                <div class="form-row">
-                    <label for="estimateAddress">Address:</label>
-                    <input type="text" id="estimateAddress" name="estimateAddress" list="addresses">
-                    <datalist id="addresses">
-                        <option value="123 Main Street, Anytown, USA">
-                        <option value="456 Elm Street, Sometown, USA">
-                        <option value="789 Oak Street, Othertown, USA">
-                    </datalist>
-                </div>
+            <section class="customer-address">
+                <h3>Customer Address</h3>
+                <input type="text" id="customerAddress" name="customerAddress" placeholder="Start typing address...">
             </section>
 
             <button type="button" class="submit-btn" onclick="createPDF()">Create PDF Estimate</button>
