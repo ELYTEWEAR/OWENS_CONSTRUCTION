@@ -27,7 +27,7 @@ header {
     margin-bottom: 20px;
 }
 
-header h1, header h2, h3 {
+header h1, header h2, header h3 {
     color: #D32F2F; /* Red color for headers */
 }
 
@@ -107,3 +107,13 @@ button[type="submit"]:hover {
         padding: 10px 20px; /* Adjusting button padding for smaller screens */
     }
 }
+
+.customer-address input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
