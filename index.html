@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://owensroofs.com/wp-content/uploads/2016/07/owens_roofs_logo.png" alt="Owen's Construction Logo">
+            <img src="https://owensroofs.com/wp-content/uploads/2018/07/cropped-RoofingLogo.png" alt="Owen's Construction Logo" width="200">
             <h1>Estimate Sheet Roofing</h1>
             <h2>Owen's Construction</h2>
             <p>Insurance Specialists<br>
@@ -29,7 +29,6 @@
                 <div class="form-row">
                     <label for="roofPitch">I will supply Labor and Material on a </label>
                     <select id="roofPitch" name="roofPitch">
-                        <option value="0">0</option>
                         <option value="flat">Flat</option>
                         <option value="4/12">4/12</option>
                         <option value="5/12">5/12</option>
@@ -46,17 +45,17 @@
                 <div class="form-row">
                     <label for="shinglesType">We will use </label>
                     <select id="shinglesType" name="shinglesType">
-                        <option value="0">0</option>
                         <option value="architectural">Architectural</option>
                         <option value="threeTab">Three-tab</option>
                         <option value="luxury">Luxury</option>
-                    </select> 3-dimensional shingles.
+                        <option value="pinicle">Pinicle</option>
+                        <option value="atlas">Atlas</option>
+                    </select> shingles.
                 </div>
 
                 <div class="form-row">
                     <label for="shingleColor">Shingle Color: </label>
                     <select id="shingleColor" name="shingleColor">
-                        <option value="0">0</option>
                         <option value="black">Black</option>
                         <option value="grey">Grey</option>
                         <option value="brown">Brown</option>
@@ -83,26 +82,26 @@
                 <div class="form-row">
                     <label for="feltWeight">Felt Weight: </label>
                     <select id="feltWeight" name="feltWeight">
-                        <option value="0">0</option>
+                        <option value="0">0 lb</option>
                         <option value="15">15 lb</option>
                         <option value="30">30 lb</option>
                     </select> on entire area of house.
                 </div>
 
                 <div class="form-row">
-                    <label for="iceWaterGuard">Ice Guard (Rolls): </label>
+                    <label for="iceWaterGuard">Add ice and water guard on front starters from drip edge up:</label>
                     <select id="iceWaterGuard" name="iceWaterGuard">
-                        <option value="0">0</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
+                        <option value="0">0 rolls</option>
+                        <option value="2">2 rolls</option>
+                        <option value="3">3 rolls</option>
+                        <option value="4">4 rolls</option>
+                        <option value="5">5 rolls</option>
+                        <option value="6">6 rolls</option>
                     </select>
                 </div>
 
                 <div class="form-row">
-                    <label for="chimneys">Re-flash </label>
+                    <label for="chimneys">Re-flash chimneys: </label>
                     <select id="chimneys" name="chimneys">
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -113,13 +112,57 @@
                 </div>
 
                 <div class="form-row">
+                    <label for="weatherIn">Weather in the roof before shingles are applied:</label>
                     <input type="checkbox" id="weatherIn" name="weatherIn" checked>
-                    <label for="weatherIn">Weather in the roof before shingles are applied.</label>
                 </div>
 
                 <div class="form-row">
-                    <label for="plywoodSheets">Replace up to </label>
+                    <label for="plywoodSheets">Replace up to: </label>
                     <select id="plywoodSheets" name="plywoodSheets">
+                        <option value="0">0 sheets</option>
+                        <option value="1">1 sheet</option>
+                        <option value="2">2 sheets</option>
+                        <option value="3">3 sheets</option>
+                        <option value="4">4 sheets</option>
+                        <option value="5">5 sheets</option>
+                        <option value="6">6 sheets</option>
+                        <option value="7">7 sheets</option>
+                        <option value="8">8 sheets</option>
+                        <option value="9">9 sheets</option>
+                        <option value="10">10 sheets</option>
+                        <option value="11">11 sheets</option>
+                        <option value="12">12 sheets</option>
+                        <option value="13">13 sheets</option>
+                        <option value="14">14 sheets</option>
+                        <option value="15">15 sheets</option>
+                        <option value="16">16 sheets</option>
+                        <option value="17">17 sheets</option>
+                        <option value="18">18 sheets</option>
+                        <option value="19">19 sheets</option>
+                        <option value="20">20 sheets</option>
+                        <option value="other">Other (Specify)</option>
+                    </select>
+                    <input type="text" id="otherPlywood" name="otherPlywood" style="display: none;" placeholder="Enter number of sheets">
+                </div>
+
+                <div class="form-row">
+                    <label for="insulationRating">Tear out any water damaged insulation and replace with R-</label>
+                    <select id="insulationRating" name="insulationRating">
+                        <option value="0">0</option>
+                        <option value="13">13</option>
+                        <option value="19">19</option>
+                        <option value="22">22</option>
+                        <option value="30">30</option>
+                        <option value="38">38</option>
+                        <option value="49">49</option>
+                        <option value="other">Other (Specify)</option>
+                    </select>
+                    <input type="text" id="otherInsulation" name="otherInsulation" style="display: none;" placeholder="Enter R-value">
+                </div>
+
+                <div class="form-row">
+                    <label for="bootsQuantity">Install new 6" inch boots for heating and stink pipes: </label>
+                    <select id="bootsQuantity" name="bootsQuantity">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -127,88 +170,63 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="other">Other</option>
-                    </select> sheets of plywood related to your damage.
-                    <input type="text" id="otherPlywood" name="otherPlywood" style="display: none;" placeholder="Enter custom number of sheets">
-                </div>
-
-                <div class="form-row">
-                    <label for="insulationRating">Insulation Rating (R-Value): </label>
-                    <select id="insulationRating" name="insulationRating">
-                        <option value="0">0</option>
-                        <option value="11">R-11</option>
-                        <option value="13">R-13</option>
-                        <option value="15">R-15</option>
-                        <option value="19">R-19</option>
-                        <option value="21">R-21</option>
-                        <option value="30">R-30</option>
-                        <option value="38">R-38</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <input type="text" id="otherInsulation" name="otherInsulation" style="display: none;" placeholder="Enter custom R-Value">
-                </div>
-
-                <div class="form-row">
-                    <label for="bootsQuantity">Install new 6" inch boots for heating and stink pipes: </label>
-                    <input type="number" id="bootsQuantity" name="bootsQuantity">
+                    </select> boots.
                 </div>
 
                 <div class="form-row">
                     <label for="bootPipesQuantity">Add 3" boot pipes on existing pipes: </label>
-                    <input type="number" id="bootPipesQuantity" name="bootPipesQuantity">
+                    <select id="bootPipesQuantity" name="bootPipesQuantity">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select> pipes.
                 </div>
 
                 <div class="form-row">
                     <label for="ridgeVentLength">Add new ridge vent on selective gables and apply ridge cap (Ln. Ft.): </label>
-                    <input type="number" id="ridgeVentLength" name="ridgeVentLength">
+                    <select id="ridgeVentLength" name="ridgeVentLength">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select> feet.
                 </div>
 
                 <div class="form-row">
                     <label for="boxVentsRemove">Remove all box vents: </label>
-                    <input type="number" id="boxVentsRemove" name="boxVentsRemove">
+                    <select id="boxVentsRemove" name="boxVentsRemove">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select> vents.
                 </div>
 
                 <div class="form-row">
                     <label for="valleysRolls">Add ice and water heavy duty to all valleys (Rolls): </label>
-                    <input type="number" id="valleysRolls" name="valleysRolls">
+                    <select id="valleysRolls" name="valleysRolls">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select> rolls.
                 </div>
 
                 <div class="form-row">
-                    <label>Nails 1 1/4" (Boxes): </label>
-                    <input type="number" name="nails1_25Boxes">
-                </div>
-
-                <div class="form-row">
-                    <label>Nails 1 3/4" (Boxes): </label>
-                    <input type="number" name="nails1_75Boxes">
-                </div>
-
-                <div class="form-row">
-                    <label>Staples T-50's (Boxes): </label>
-                    <input type="number" name="staplesBoxes">
-                </div>
-
-                <div class="form-row">
-                    <label>Plywood 7/16 OSB Sheets: </label>
-                    <input type="number" name="plywoodSheetsOSB">
-                </div>
-
-                <div class="form-row">
-                    <label>Using 1 - 15 yd dumpster to haul away debris.</label>
+                    <label>Plywood 7/16 OSB Sheets: $80/sheet</label>
                 </div>
             </section>
 
