@@ -290,7 +290,7 @@
         </form>
     </div>
 
-    <button class="submit-btn" onclick="showContent()">Show Content in New Page</button>
+    <button class="submit-btn" onclick="showContent()">Generate Final Estimate</button>
 
     <script>
         function showContent() {
@@ -298,35 +298,26 @@
             transformContent(content);
             var newWindow = window.open('', '_blank');
             newWindow.document.open();
-            newWindow.document.write('<html><head><title>Estimate Preview</title><link rel="stylesheet" href="style.css"></head><body>');
+            newWindow.document.write('<html><head><title>Final Estimate</title><link rel="stylesheet" href="style.css"></head><body>');
             newWindow.document.write(content.innerHTML);
             newWindow.document.write('</body></html>');
             newWindow.document.close();
         }
 
         function transformContent(content) {
-            // Transform select elements to text
-            var selects = content.getElementsByTagName('select');
-            for (var i = 0; i < selects.length; i++) {
-                var text = selects[i].options[selects[i].selectedIndex].text;
-                var span = document.createElement('span');
-                span.textContent = text;
-                selects[i].parentNode.replaceChild(span, selects[i]);
-            }
+            Array.from(content.getElementsByTagName('select')).forEach(select => {
+                const textNode = document.createTextNode(select.options[select.selectedIndex].text);
+                select.parentNode.replaceChild(textNode, select);
+            });
 
-            // Transform input elements to text
-            var inputs = content.querySelectorAll('input[type="text"], input[type="number"], input[type="date"]');
-            for (var i = 0; i < inputs.length; i++) {
-                var span = document.createElement('span');
-                span.textContent = inputs[i].value;
-                inputs[i].parentNode.replaceChild(span, inputs[i]);
-            }
+            Array.from(content.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], textarea')).forEach(input => {
+                const textNode = document.createTextNode(input.value);
+                input.parentNode.replaceChild(textNode, input);
+            });
 
-            // Hide or remove elements not needed in the estimate
-            var elementsToHide = content.querySelectorAll('.submit-btn, input[type="checkbox"], input[type="radio"], label');
-            for (var i = 0; i < elementsToHide.length; i++) {
-                elementsToHide[i].style.display = 'none'; // or elementsToHide[i].remove();
-            }
+            Array.from(content.querySelectorAll('input[type="checkbox"], input[type="radio"], button, .submit-btn, label')).forEach(element => {
+                element.parentNode.removeChild(element);
+            });
         }
     </script>
 </body>
