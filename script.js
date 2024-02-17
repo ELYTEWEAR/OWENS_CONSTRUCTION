@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const estimateForm = document.getElementById('estimateForm');
 
-    estimateForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+    window.createPDF = function() { // Define createPDF as a global function
+        event.preventDefault(); // Prevent the default form submission behavior
 
         // Initialize jsPDF
         const doc = new jsPDF();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formElements = estimateForm.elements;
         for (let i = 0; i < formElements.length; i++) {
             const element = formElements[i];
-            if (element.type !== "submit" && element.name !== "") { // Skip the submit button and elements without a name
+            if (element.type !== "submit" && element.name !== "") {
                 let text;
                 if (element.type === 'checkbox') {
                     text = `${element.checked ? 'Yes' : 'No'} - ${element.previousElementSibling.innerText}`;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 doc.text(text, 10, yPosition);
                 yPosition += 10; // Increment for next item
-                if (yPosition > 280) { // Add a new page if the current page is full
+                if (yPosition > 280) {
                     doc.addPage();
                     yPosition = 10; // Reset position for the new page
                 }
@@ -39,5 +39,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Save the PDF
         doc.save('Estimate-Sheet-Roofing.pdf');
-    });
+    };
 });
