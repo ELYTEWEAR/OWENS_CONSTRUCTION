@@ -11,15 +11,15 @@
         <header>
             <h1>Estimate Sheet Roofing</h1>
             <h2>Owen's Construction</h2>
-            <p>Insurance Specialists</p>
-            <p>Phone: (330) 507-5195</p>
-            <p>Fax: (330) 792-7432</p>
-            <p>Email: <a href="mailto:mykal372002@yahoo.com">mykal372002@yahoo.com</a></p>
-            <p>Website: <a href="https://www.owensroofs.com" target="_blank">www.owensroofs.com</a></p>
-            <p>Location: Austintown, Ohio</p>
-            <p>Fully Insured & Bonded</p>
-            <p>Professional Workmanship</p>
-            <p>1 Year Labor Guarantee</p>
+            <p>Insurance Specialists<br>
+            Phone: (330) 507-5195<br>
+            Fax: (330) 792-7432<br>
+            Email: <a href="mailto:mykal372002@yahoo.com">mykal372002@yahoo.com</a><br>
+            Website: <a href="https://www.owensroofs.com" target="_blank">www.owensroofs.com</a><br>
+            Location: Austintown, Ohio<br>
+            Fully Insured & Bonded<br>
+            Professional Workmanship<br>
+            1 Year Labor Guarantee</p>
         </header>
 
         <form id="estimateForm">
@@ -28,7 +28,6 @@
                 <div class="form-row">
                     <label for="roofPitch">I will supply Labor and Material on a </label>
                     <select id="roofPitch" name="roofPitch">
-                        <option value="">Select Roof Pitch</option>
                         <option value="flat">Flat</option>
                         <option value="4/12">4/12</option>
                         <option value="5/12">5/12</option>
@@ -43,101 +42,73 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="shinglesType">We will use </label>
-                    <input type="text" id="shinglesType" name="shinglesType" placeholder="Type of 3 dimensional shingles"> 3 dimensional shingles.
+                    <label for="shinglesType">Type of 3D Shingles: </label>
+                    <select id="shinglesType" name="shinglesType">
+                        <option value="architectural">Architectural</option>
+                        <option value="threeTab">Three-tab</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
-                    <label for="squareColor">Square Color:</label>
-                    <input type="text" id="squareColor" name="squareColor">
+                    <label for="shingleColor">Shingle Color: </label>
+                    <select id="shingleColor" name="shingleColor">
+                        <option value="black">Black</option>
+                        <option value="grey">Grey</option>
+                        <option value="brown">Brown</option>
+                        <option value="tan">Tan</option>
+                        <option value="red">Red</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
-                    <label>
-                        <input type="checkbox" name="tearOff"> I will tear off damaged roof and re-shingle.
-                    </label>
+                    <label for="squares">Number of Squares: </label>
+                    <input type="number" id="squares" name="squares">
                 </div>
 
                 <div class="form-row">
-                    <label for="dripEdgeLength">I will add new drip edge.</label>
-                    <input type="text" id="dripEdgeLength" name="dripEdgeLength" placeholder="Length in Ft."> Ln. Ft.
+                    <input type="checkbox" id="tearOff" name="tearOff" checked>
+                    <label for="tearOff">I will tear off damaged roof and re-shingle.</label>
                 </div>
 
                 <div class="form-row">
-                    <label for="feltWeight">Add new </label>
-                    <input type="text" id="feltWeight" name="feltWeight" placeholder="Weight"> lb. Felt on entire area of house.
+                    <label for="dripEdgeLength">New Drip Edge (Ln. Ft.): </label>
+                    <input type="number" id="dripEdgeLength" name="dripEdgeLength">
                 </div>
 
                 <div class="form-row">
-                    <label>Add new ice and water guard on front starters from drip edge up.</label>
+                    <label for="feltWeight">Felt Weight: </label>
+                    <select id="feltWeight" name="feltWeight">
+                        <option value="15">15 lb</option>
+                        <option value="30">30 lb</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
-                    <label for="chimneys">Re-flash </label>
-                    <input type="number" id="chimneys" name="chimneys" placeholder="Number"> chimneys.
+                    <label for="chimneys">Number of Chimneys to Re-flash: </label>
+                    <select id="chimneys" name="chimneys">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
                 </div>
 
                 <div class="form-row">
-                    <label>Weather in the roof before shingles are applied.</label>
+                    <input type="checkbox" id="weatherIn" name="weatherIn" checked>
+                    <label for="weatherIn">Weather in the roof before shingles are applied.</label>
                 </div>
 
-                <div class="form-row">
-                    <label for="plywoodSheets">Replace up to </label>
-                    <input type="number" id="plywoodSheets" name="plywoodSheets" placeholder="Number"> sheets of plywood related to your damage.
-                </div>
+                <!-- Additional fields as required -->
 
-                <div class="form-row">
-                    <label for="insulationRating">Tear out any water damaged insulation and replace with R-</label>
-                    <input type="text" id="insulationRating" name="insulationRating" placeholder="Rating"> if necessary.
-                </div>
-
-                <div class="form-row">
-                    <label for="bootsQuantity">Install a new 6" inch boots for heating and stink pipes.</label>
-                    <input type="text" id="bootsQuantity" name="bootsQuantity" placeholder="Quantity">
-                </div>
-
-                <div class="form-row">
-                    <label for="bootPipesQuantity">Add 3" boot pipes on existing pipes.</label>
-                    <input type="text" id="bootPipesQuantity" name="bootPipesQuantity" placeholder="Quantity">
-                </div>
-
-                <div class="form-row">
-                    <label for="ridgeVentLength">Add new ridge vent on selective gables and apply ridge cap.</label>
-                    <input type="text" id="ridgeVentLength" name="ridgeVentLength" placeholder="Length in Ft."> Ln. Ft.
-                </div>
-
-                <div class="form-row">
-                    <label for="boxVentsRemove">Remove all box vents.</label>
-                    <input type="text" id="boxVentsRemove" name="boxVentsRemove" placeholder="Quantity">
-                </div>
-
-                <div class="form-row">
-                    <label for="valleysRolls">Add ice and water heavy duty to all valleys.</label>
-                    <input type="text" id="valleysRolls" name="valleysRolls" placeholder="Rolls"> Rolls
-                </div>
-
-                <div class="form-row">
-                    <label><input type="text" name="nails1_25Boxes" placeholder="Boxes"> boxes of 1 1/4 nails and <input type="text" name="nails1_75Boxes" placeholder="Boxes"> boxes of 1 ¾ nails.</label>
-                </div>
-
-                <div class="form-row">
-                    <label><input type="text" name="staplesBoxes" placeholder="Boxes"> boxes of staples T-50's</label>
-                </div>
-
-                <div class="form-row">
-                    <label><input type="text" name="plywoodSheetsOSB" placeholder="Sheets"> sheets of plywood 7/16 OSB</label>
-                </div>
-
-                <div class="form-row">
-                    <label>Using 1 - 15 yd dumpster to haul away debris.</label>
-                </div>
             </section>
 
             <section class="costs-and-labor">
                 <h3>Total for Cost and Labor</h3>
                 <div class="form-row">
                     <label for="totalCost">Total for Cost and Labor: $</label>
-                    <input type="text" id="totalCost" name="totalCost">
+                    <input type="number" id="totalCost" name="totalCost">
                 </div>
 
                 <div class="form-row">
@@ -148,7 +119,7 @@
 
             <section class="terms-and-conditions">
                 <h3>Terms and Conditions</h3>
-                <p>All material is guaranteed to be as specified, and the above work to be performed in accordance with the drawings and specifications submitted for above work and completed in a substantial workmanlike manner for the sum of <input type="text" name="agreedSum">. Any alteration or deviation from above specifications involving extra costs will be executed only upon written orders, and will become an extra charge over and above the estimate. Owens Construction is not responsible for ice damage occurred on the roof. All agreements contingent upon strikes, accidents, or delays beyond our control. 50% money up front and 50% money on completion.</p>
+                <p>All material is guaranteed to be as specified, and the above work to be performed in accordance with the drawings and specifications submitted for above work and completed in a substantial workmanlike manner for the sum of <input type="number" name="agreedSum">. Any alteration or deviation from above specifications involving extra costs will be executed only upon written orders, and will become an extra charge over and above the estimate. Owens Construction is not responsible for ice damage occurred on the roof. All agreements contingent upon strikes, accidents, or delays beyond our control. 50% money up front and 50% money on completion.</p>
                 <p>Acceptance of Proposal: Owens Construction and <input type="text" name="clientName"> agree to the work with the money given from the insurance company, at no cost above or below the written amount including the depreciation. Any unforeseen expenses will be taken up with the insurance company and adjuster as a supplement.</p>
                 <p>IN ACCORDANCE AND PURSUANT TO THE TERMS AND CONDITIONS OF OHIO REVISED CODE SECTION 1345.23 "HOME SOLICITATION ACT" THE HOMEOWNER SHALL HAVE THREE (3) BUSINESS DAYS TO CANCEL THE FOREGOING PROPOSAL/CONTRACT BY MIDNIGHT OF THE THIRD DAY.</p>
             </section>
@@ -170,7 +141,7 @@
                 </div>
             </section>
 
-            <button type="submit" class="submit-btn">Submit Estimate</button>
+            <button type="button" class="submit-btn" onclick="createPDF()">Create PDF Estimate</button>
         </form>
     </div>
 
