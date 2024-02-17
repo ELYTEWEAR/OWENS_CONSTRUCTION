@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta viewport="width=device-width, initial-scale=1.0">
     <title>Estimate Sheet Roofing - Owen's Construction</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -42,12 +42,12 @@
                 </div>
 
                 <div class="form-row">
-                    <label for="shinglesType">Type of 3D Shingles: </label>
+                    <label for="shinglesType">We will use </label>
                     <select id="shinglesType" name="shinglesType">
                         <option value="architectural">Architectural</option>
                         <option value="threeTab">Three-tab</option>
                         <option value="luxury">Luxury</option>
-                    </select>
+                    </select> 3-dimensional shingles.
                 </div>
 
                 <div class="form-row">
@@ -81,18 +81,23 @@
                     <select id="feltWeight" name="feltWeight">
                         <option value="15">15 lb</option>
                         <option value="30">30 lb</option>
-                    </select>
+                    </select> on entire area of house.
                 </div>
 
                 <div class="form-row">
-                    <label for="chimneys">Number of Chimneys to Re-flash: </label>
+                    <input type="checkbox" id="iceWaterGuard" name="iceWaterGuard" checked>
+                    <label for="iceWaterGuard">Add new ice and water guard on front starters from drip edge up.</label>
+                </div>
+
+                <div class="form-row">
+                    <label for="chimneys">Re-flash </label>
                     <select id="chimneys" name="chimneys">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
-                    </select>
+                    </select> chimneys.
                 </div>
 
                 <div class="form-row">
@@ -100,8 +105,64 @@
                     <label for="weatherIn">Weather in the roof before shingles are applied.</label>
                 </div>
 
-                <!-- Additional fields as required -->
+                <div class="form-row">
+                    <label for="plywoodSheets">Replace up to </label>
+                    <input type="number" id="plywoodSheets" name="plywoodSheets"> sheets of plywood related to your damage.
+                </div>
 
+                <div class="form-row">
+                    <label for="insulationRating">Tear out any water damaged insulation and replace with R-</label>
+                    <input type="text" id="insulationRating" name="insulationRating">
+                </div>
+
+                <div class="form-row">
+                    <label for="bootsQuantity">Install new 6" inch boots for heating and stink pipes: </label>
+                    <input type="number" id="bootsQuantity" name="bootsQuantity">
+                </div>
+
+                <div class="form-row">
+                    <label for="bootPipesQuantity">Add 3" boot pipes on existing pipes: </label>
+                    <input type="number" id="bootPipesQuantity" name="bootPipesQuantity">
+                </div>
+
+                <div class="form-row">
+                    <label for="ridgeVentLength">Add new ridge vent on selective gables and apply ridge cap (Ln. Ft.): </label>
+                    <input type="number" id="ridgeVentLength" name="ridgeVentLength">
+                </div>
+
+                <div class="form-row">
+                    <label for="boxVentsRemove">Remove all box vents: </label>
+                    <input type="number" id="boxVentsRemove" name="boxVentsRemove">
+                </div>
+
+                <div class="form-row">
+                    <label for="valleysRolls">Add ice and water heavy duty to all valleys (Rolls): </label>
+                    <input type="number" id="valleysRolls" name="valleysRolls">
+                </div>
+
+                <div class="form-row">
+                    <label>Nails 1 1/4" (Boxes): </label>
+                    <input type="number" name="nails1_25Boxes">
+                </div>
+
+                <div class="form-row">
+                    <label>Nails 1 3/4" (Boxes): </label>
+                    <input type="number" name="nails1_75Boxes">
+                </div>
+
+                <div class="form-row">
+                    <label>Staples T-50's (Boxes): </label>
+                    <input type="number" name="staplesBoxes">
+                </div>
+
+                <div class="form-row">
+                    <label>Plywood 7/16 OSB Sheets: </label>
+                    <input type="number" name="plywoodSheetsOSB">
+                </div>
+
+                <div class="form-row">
+                    <label>Using 1 - 15 yd dumpster to haul away debris.</label>
+                </div>
             </section>
 
             <section class="costs-and-labor">
