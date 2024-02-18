@@ -294,40 +294,58 @@
     <button class="submit-btn" onclick="showContent()">Generate Final Estimate</button>
 
     <script>
-        function showContent() {
-            var content = document.getElementById('content').cloneNode(true);
-            transformContent(content);
-            var newWindow = window.open('', '_blank');
-            newWindow.document.open();
-            newWindow.document.write('<html><head><title>Final Estimate</title><link rel="stylesheet" href="style.css"></head><body>');
-            newWindow.document.write('<div class="container">' + content.innerHTML + '</div>');
-            newWindow.document.write('</body></html>');
-            newWindow.document.close();
-        }
+    function showContent() {
+        // Clone the content of the original form
+        var content = document.getElementById('content').cloneNode(true);
+        // Transform the content to display the final estimate
+        transformContent(content);
+        // Open a new window to display the final estimate
+        var newWindow = window.open('', '_blank');
+        newWindow.document.open();
+        // Write the HTML content for the new window
+        newWindow.document.write('<html><head><title>Final Estimate</title><link rel="stylesheet" href="style.css"></head><body>');
+        newWindow.document.write('<div class="container">' + content.innerHTML + '</div>');
+        newWindow.document.write('</body></html>');
+        newWindow.document.close();
 
-        function transformContent(content) {
-            const form = content.querySelector('#estimateForm');
-            const sections = form.children;
-            const finalView = document.createElement('section');
-            finalView.classList.add('final-view');
-            finalView.innerHTML = '<h2>Final Estimate Details</h2>';
-            Array.from(sections).forEach(section => {
-                const questions = Array.from(section.querySelectorAll('label')).map(label => label.textContent);
-                const answers = Array.from(section.querySelectorAll('input, select, textarea')).map(input => {
-                    if (input.type === 'checkbox' || input.type === 'radio') {
-                        return input.checked ? 'Yes' : 'No';
-                    } else if (input.tagName === 'SELECT') {
-                        return input.options[input.selectedIndex].text;
-                    } else {
-                        return input.value;
-                    }
-                });
-                const questionsAndAnswers = questions.map((question, index) => `<p><strong>${question}</strong> ${answers[index]}</p>`).join('');
-                finalView.innerHTML += questionsAndAnswers;
+        // Make the customer address field readonly in the original form after generating the final estimate
+        var originalFormCustomerAddress = document.getElementById('customerAddress');
+        originalFormCustomerAddress.setAttribute('readonly', true);
+    }
+
+    function transformContent(content) {
+        // Get the form element from the cloned content
+        const form = content.querySelector('#estimateForm');
+        // Get the sections within the form
+        const sections = form.children;
+        // Create a new section to display the final estimate details
+        const finalView = document.createElement('section');
+        finalView.classList.add('final-view');
+        finalView.innerHTML = '<h2>Final Estimate Details</h2>';
+        // Iterate over each section of the form
+        Array.from(sections).forEach(section => {
+            // Get the labels within the section and map them to their text content
+            const questions = Array.from(section.querySelectorAll('label')).map(label => label.textContent);
+            // Get the input, select, and textarea elements within the section and map their values
+            const answers = Array.from(section.querySelectorAll('input, select, textarea')).map(input => {
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    return input.checked ? 'Yes' : 'No';
+                } else if (input.tagName === 'SELECT') {
+                    return input.options[input.selectedIndex].text;
+                } else {
+                    return input.value;
+                }
             });
-            form.insertAdjacentElement('afterend', finalView);
-            form.style.display = 'none';
-        }
-    </script>
+            // Combine the questions and answers into HTML paragraphs and append them to the final view
+            const questionsAndAnswers = questions.map((question, index) => `<p><strong>${question}</strong> ${answers[index]}</p>`).join('');
+            finalView.innerHTML += questionsAndAnswers;
+        });
+        // Insert the final view after the form in the cloned content
+        form.insertAdjacentElement('afterend', finalView);
+        // Hide the original form in the cloned content
+        form.style.display = 'none';
+    }
+</script>
+
 </body>
 </html>
