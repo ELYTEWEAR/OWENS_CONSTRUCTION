@@ -305,6 +305,8 @@
         // Write the HTML content for the new window
         newWindow.document.write('<html><head><title>Final Estimate</title><link rel="stylesheet" href="style.css"></head><body>');
         newWindow.document.write('<div class="container">' + content.innerHTML + '</div>');
+        // Add a "Print" button to the final estimate page
+        newWindow.document.write('<button class="print-btn" onclick="printContent()">Print</button>');
         newWindow.document.write('</body></html>');
         newWindow.document.close();
 
@@ -345,7 +347,12 @@
         // Hide the original form in the cloned content
         form.style.display = 'none';
     }
+
+    function printContent() {
+        window.print(); // Initiate print dialog
+    }
 </script>
+
 
 </body>
 </html>
