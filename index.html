@@ -299,25 +299,33 @@
             var newWindow = window.open('', '_blank');
             newWindow.document.open();
             newWindow.document.write('<html><head><title>Final Estimate</title><link rel="stylesheet" href="style.css"></head><body>');
-            newWindow.document.write(content.innerHTML);
+            newWindow.document.write('<div class="container">' + content.innerHTML + '</div>');
             newWindow.document.write('</body></html>');
             newWindow.document.close();
         }
 
         function transformContent(content) {
-            Array.from(content.getElementsByTagName('select')).forEach(select => {
-                const textNode = document.createTextNode(select.options[select.selectedIndex].text);
-                select.parentNode.replaceChild(textNode, select);
+            const form = content.querySelector('#estimateForm');
+            const sections = form.children;
+            const finalView = document.createElement('section');
+            finalView.classList.add('final-view');
+            finalView.innerHTML = '<h2>Final Estimate Details</h2>';
+            Array.from(sections).forEach(section => {
+                const questions = Array.from(section.querySelectorAll('label')).map(label => label.textContent);
+                const answers = Array.from(section.querySelectorAll('input, select, textarea')).map(input => {
+                    if (input.type === 'checkbox' || input.type === 'radio') {
+                        return input.checked ? 'Yes' : 'No';
+                    } else if (input.tagName === 'SELECT') {
+                        return input.options[input.selectedIndex].text;
+                    } else {
+                        return input.value;
+                    }
+                });
+                const questionsAndAnswers = questions.map((question, index) => `<p><strong>${question}</strong> ${answers[index]}</p>`).join('');
+                finalView.innerHTML += questionsAndAnswers;
             });
-
-            Array.from(content.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], textarea')).forEach(input => {
-                const textNode = document.createTextNode(input.value);
-                input.parentNode.replaceChild(textNode, input);
-            });
-
-            Array.from(content.querySelectorAll('input[type="checkbox"], input[type="radio"], button, .submit-btn, label')).forEach(element => {
-                element.parentNode.removeChild(element);
-            });
+            form.insertAdjacentElement('afterend', finalView);
+            form.style.display = 'none';
         }
     </script>
 </body>
