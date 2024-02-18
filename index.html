@@ -349,9 +349,17 @@
     }
 
     function printContent() {
-        window.print(); // Initiate print dialog
+        var newWindow = window.open('', '_blank');
+        newWindow.document.open();
+        // Write the HTML content for the new window
+        newWindow.document.write('<html><head><title>Final Estimate - Print View</title><link rel="stylesheet" href="style.css"></head><body>');
+        newWindow.document.write('<div class="container">' + document.querySelector('.final-view').innerHTML + '</div>');
+        newWindow.document.write('</body></html>');
+        newWindow.document.close();
+        newWindow.print(); // Initiate print dialog
     }
 </script>
+
 
 </body>
 </html>
